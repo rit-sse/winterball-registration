@@ -45,10 +45,11 @@ input[type="text"].huge-textbox {
 }
 
 #notification {
-    /*display: none;*/
     margin: 5px;
     padding: 10px;
     background-color: #fdd;
+    font-size: 1.1em;
+    border: solid 1px #ccc;
 }
 
 #notification-holder {

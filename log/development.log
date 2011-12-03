@@ -29263,3 +29263,742 @@ Served asset /application.js - 304 Not Modified (0ms)
 
 Started GET "/assets/vortex.png" for 127.0.0.1 at 2011-12-02 21:52:42 -0500
 Served asset /vortex.png - 304 Not Modified (0ms)
+
+
+Started GET "/guests" for 127.0.0.1 at 2011-12-02 21:59:33 -0500
+  Processing by GuestsController#index as HTML
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" ORDER BY ticketnumber[0m
+Rendered guests/index.html.erb within layouts/application (80.3ms)
+Completed 200 OK in 90ms (Views: 88.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2011-12-02 21:59:33 -0500
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-02 21:59:33 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-02 21:59:33 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-02 21:59:33 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2011-12-02 21:59:33 -0500
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-02 21:59:33 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-02 21:59:33 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/vortex.png" for 127.0.0.1 at 2011-12-02 21:59:33 -0500
+Served asset /vortex.png - 304 Not Modified (0ms)
+
+
+Started PUT "/guests/checkin" for 127.0.0.1 at 2011-12-02 21:59:37 -0500
+  Processing by GuestsController#checkin as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5vZ0Ae8AWn/h+0SaCqXcrw6qg5OvscK7baAW+Bh98Mk=", "ticket"=>"3", "commit"=>"Check-in"}
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."ticketnumber" = 3 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 3 AND "guests"."id" != 3) LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  UPDATE "guests" SET "arrived" = 't', "updated_at" = '2011-12-03 02:59:37.730782' WHERE "guests"."id" = 3
+Redirected to http://localhost:3000/
+Completed 302 Found in 14ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-02 21:59:37 -0500
+  Processing by GuestsController#index as HTML
+  [1m[36mGuest Load (0.3ms)[0m  [1mSELECT "guests".* FROM "guests" ORDER BY ticketnumber[0m
+Rendered guests/index.html.erb within layouts/application (79.9ms)
+Completed 200 OK in 89ms (Views: 86.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-02 21:59:37 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-02 21:59:37 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2011-12-02 21:59:37 -0500
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-02 21:59:37 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2011-12-02 21:59:37 -0500
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-02 21:59:37 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-02 21:59:37 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/vortex.png" for 127.0.0.1 at 2011-12-02 21:59:37 -0500
+Served asset /vortex.png - 304 Not Modified (0ms)
+
+
+Started GET "/guests/checkout/3" for 127.0.0.1 at 2011-12-02 21:59:40 -0500
+  Processing by GuestsController#checkout as HTML
+  Parameters: {"ticket"=>"3"}
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."ticketnumber" = 3 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 3 AND "guests"."id" != 3) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  UPDATE "guests" SET "arrived" = 'f', "updated_at" = '2011-12-03 02:59:40.633047' WHERE "guests"."id" = 3
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-02 21:59:40 -0500
+  Processing by GuestsController#index as HTML
+  [1m[36mGuest Load (0.3ms)[0m  [1mSELECT "guests".* FROM "guests" ORDER BY ticketnumber[0m
+Rendered guests/index.html.erb within layouts/application (79.2ms)
+Completed 200 OK in 88ms (Views: 86.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-02 21:59:40 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2011-12-02 21:59:40 -0500
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-02 21:59:40 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-02 21:59:40 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2011-12-02 21:59:40 -0500
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-02 21:59:40 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-02 21:59:40 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/vortex.png" for 127.0.0.1 at 2011-12-02 21:59:40 -0500
+Served asset /vortex.png - 304 Not Modified (0ms)
+
+
+Started GET "/guests" for 127.0.0.1 at 2011-12-02 22:00:01 -0500
+  Processing by GuestsController#index as HTML
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" ORDER BY ticketnumber
+Rendered guests/index.html.erb within layouts/application (80.0ms)
+Completed 200 OK in 90ms (Views: 86.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-02 22:00:01 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2011-12-02 22:00:01 -0500
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-02 22:00:01 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-02 22:00:01 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2011-12-02 22:00:01 -0500
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-02 22:00:01 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-02 22:00:01 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/vortex.png" for 127.0.0.1 at 2011-12-02 22:00:01 -0500
+Served asset /vortex.png - 304 Not Modified (0ms)
+
+
+Started GET "/guests/10/edit" for 127.0.0.1 at 2011-12-02 22:00:07 -0500
+  Processing by GuestsController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mGuest Load (0.2ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = ? LIMIT 1[0m  [["id", "10"]]
+Rendered guests/_form.html.erb (10.3ms)
+Rendered guests/edit.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 22ms (Views: 19.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-02 22:00:07 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-02 22:00:07 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2011-12-02 22:00:07 -0500
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-02 22:00:07 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-02 22:00:07 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2011-12-02 22:00:07 -0500
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-02 22:00:07 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/vortex.png" for 127.0.0.1 at 2011-12-02 22:00:07 -0500
+Served asset /vortex.png - 304 Not Modified (0ms)
+
+
+Started GET "/guests/10" for 127.0.0.1 at 2011-12-02 22:00:12 -0500
+  Processing by GuestsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = ? LIMIT 1  [["id", "10"]]
+Rendered guests/show.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 16ms (Views: 13.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-02 22:00:12 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-02 22:00:12 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2011-12-02 22:00:12 -0500
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2011-12-02 22:00:12 -0500
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-02 22:00:12 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-02 22:00:12 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-02 22:00:12 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/vortex.png" for 127.0.0.1 at 2011-12-02 22:00:12 -0500
+Served asset /vortex.png - 304 Not Modified (0ms)
+
+
+Started GET "/guests/10/edit" for 127.0.0.1 at 2011-12-02 22:00:14 -0500
+  Processing by GuestsController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mGuest Load (0.2ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = ? LIMIT 1[0m  [["id", "10"]]
+Rendered guests/_form.html.erb (9.8ms)
+Rendered guests/edit.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-02 22:00:14 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-02 22:00:14 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-02 22:00:14 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2011-12-02 22:00:14 -0500
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2011-12-02 22:00:14 -0500
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-02 22:00:14 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-02 22:00:14 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/vortex.png" for 127.0.0.1 at 2011-12-02 22:00:14 -0500
+Served asset /vortex.png - 304 Not Modified (0ms)
+
+
+Started PUT "/guests/10" for 127.0.0.1 at 2011-12-02 22:00:17 -0500
+  Processing by GuestsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5vZ0Ae8AWn/h+0SaCqXcrw6qg5OvscK7baAW+Bh98Mk=", "guest"=>{"name"=>"Derek Erdmann", "ticketnumber"=>"10", "arrived"=>"0", "wonprize"=>"0"}, "commit"=>"Update Guest", "id"=>"10"}
+  [1m[35mGuest Load (0.2ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = ? LIMIT 1  [["id", "10"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 10 AND "guests"."id" != 10) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  UPDATE "guests" SET "name" = 'Derek Erdmann', "updated_at" = '2011-12-03 03:00:17.842042' WHERE "guests"."id" = 10
+Redirected to http://localhost:3000/guests/10
+Completed 302 Found in 14ms
+
+
+Started GET "/guests/10" for 127.0.0.1 at 2011-12-02 22:00:17 -0500
+  Processing by GuestsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mGuest Load (0.2ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = ? LIMIT 1[0m  [["id", "10"]]
+Rendered guests/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2011-12-02 22:00:17 -0500
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-02 22:00:17 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-02 22:00:17 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-02 22:00:17 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2011-12-02 22:00:17 -0500
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-02 22:00:17 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-02 22:00:17 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/vortex.png" for 127.0.0.1 at 2011-12-02 22:00:17 -0500
+Served asset /vortex.png - 304 Not Modified (0ms)
+
+
+Started GET "/guests" for 127.0.0.1 at 2011-12-02 22:00:19 -0500
+  Processing by GuestsController#index as HTML
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" ORDER BY ticketnumber
+Rendered guests/index.html.erb within layouts/application (44.4ms)
+Completed 200 OK in 54ms (Views: 51.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-02 22:00:19 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-02 22:00:19 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-02 22:00:19 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-02 22:00:19 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2011-12-02 22:00:19 -0500
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2011-12-02 22:00:19 -0500
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-02 22:00:19 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/vortex.png" for 127.0.0.1 at 2011-12-02 22:00:19 -0500
+Served asset /vortex.png - 304 Not Modified (0ms)
+
+
+Started GET "/guests/checkout" for 127.0.0.1 at 2011-12-02 22:01:11 -0500
+  Processing by GuestsController#checkout as HTML
+  [1m[36mGuest Load (0.2ms)[0m  [1mSELECT "guests".* FROM "guests" [0m
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 1 AND "guests"."id" != 1) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 2 AND "guests"."id" != 2) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 3 AND "guests"."id" != 3) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 4 AND "guests"."id" != 4) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 5 AND "guests"."id" != 5) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 6 AND "guests"."id" != 6) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 7 AND "guests"."id" != 7) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 8 AND "guests"."id" != 8) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 9 AND "guests"."id" != 9) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 10 AND "guests"."id" != 10) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 11 AND "guests"."id" != 11) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 12 AND "guests"."id" != 12) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 13 AND "guests"."id" != 13) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 14 AND "guests"."id" != 14) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 15 AND "guests"."id" != 15) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 16 AND "guests"."id" != 16) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 17 AND "guests"."id" != 17) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 18 AND "guests"."id" != 18) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 19 AND "guests"."id" != 19) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 20 AND "guests"."id" != 20) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 21 AND "guests"."id" != 21) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 22 AND "guests"."id" != 22) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 23 AND "guests"."id" != 23) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 24 AND "guests"."id" != 24) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 25 AND "guests"."id" != 25) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 26 AND "guests"."id" != 26) LIMIT 1[0m
+Redirected to http://localhost:3000/guests
+Completed 302 Found in 32ms
+
+
+Started GET "/guests" for 127.0.0.1 at 2011-12-02 22:01:11 -0500
+  Processing by GuestsController#index as HTML
+  [1m[35mGuest Load (0.3ms)[0m  SELECT "guests".* FROM "guests" ORDER BY ticketnumber
+Rendered guests/index.html.erb within layouts/application (79.5ms)
+Completed 200 OK in 89ms (Views: 86.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2011-12-02 22:01:11 -0500
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2011-12-02 22:01:11 -0500
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-02 22:01:11 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-02 22:01:11 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-02 22:01:11 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-02 22:01:11 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-02 22:01:11 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/vortex.png" for 127.0.0.1 at 2011-12-02 22:01:11 -0500
+Served asset /vortex.png - 304 Not Modified (0ms)
+
+
+Started GET "/guests" for 127.0.0.1 at 2011-12-02 22:02:15 -0500
+  Processing by GuestsController#index as HTML
+  [1m[36mGuest Load (0.3ms)[0m  [1mSELECT "guests".* FROM "guests" ORDER BY ticketnumber[0m
+Rendered guests/index.html.erb within layouts/application (80.6ms)
+Compiled guests.css  (15ms)  (pid 7212)
+Compiled application.css  (1ms)  (pid 7212)
+Completed 200 OK in 137ms (Views: 134.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-02 22:02:15 -0500
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-02 22:02:15 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2011-12-02 22:02:15 -0500
+Served asset /guests.css - 200 OK (7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-02 22:02:15 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-02 22:02:15 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2011-12-02 22:02:15 -0500
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-02 22:02:15 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/vortex.png" for 127.0.0.1 at 2011-12-02 22:02:15 -0500
+Served asset /vortex.png - 304 Not Modified (0ms)
+
+
+Started PUT "/guests/checkin" for 127.0.0.1 at 2011-12-02 22:02:17 -0500
+  Processing by GuestsController#checkin as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5vZ0Ae8AWn/h+0SaCqXcrw6qg5OvscK7baAW+Bh98Mk=", "ticket"=>"1", "commit"=>"Check-in"}
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."ticketnumber" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 1 AND "guests"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  UPDATE "guests" SET "arrived" = 't', "updated_at" = '2011-12-03 03:02:17.532894' WHERE "guests"."id" = 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 14ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-02 22:02:17 -0500
+  Processing by GuestsController#index as HTML
+  [1m[36mGuest Load (0.3ms)[0m  [1mSELECT "guests".* FROM "guests" ORDER BY ticketnumber[0m
+Rendered guests/index.html.erb within layouts/application (79.9ms)
+Completed 200 OK in 90ms (Views: 87.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-02 22:02:17 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2011-12-02 22:02:17 -0500
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-02 22:02:17 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-02 22:02:17 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2011-12-02 22:02:17 -0500
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-02 22:02:17 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-02 22:02:17 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/vortex.png" for 127.0.0.1 at 2011-12-02 22:02:17 -0500
+Served asset /vortex.png - 304 Not Modified (0ms)
+
+
+Started GET "/guests/checkout/1" for 127.0.0.1 at 2011-12-02 22:02:21 -0500
+  Processing by GuestsController#checkout as HTML
+  Parameters: {"ticket"=>"1"}
+  [1m[35mGuest Load (0.1ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."ticketnumber" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 1 AND "guests"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  UPDATE "guests" SET "arrived" = 'f', "updated_at" = '2011-12-03 03:02:21.850654' WHERE "guests"."id" = 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-02 22:02:21 -0500
+  Processing by GuestsController#index as HTML
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" ORDER BY ticketnumber[0m
+Rendered guests/index.html.erb within layouts/application (44.1ms)
+Completed 200 OK in 56ms (Views: 52.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-02 22:02:22 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2011-12-02 22:02:22 -0500
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-02 22:02:22 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-02 22:02:22 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-02 22:02:22 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2011-12-02 22:02:22 -0500
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-02 22:02:22 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/vortex.png" for 127.0.0.1 at 2011-12-02 22:02:22 -0500
+Served asset /vortex.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-02 22:02:44 -0500
+  Processing by GuestsController#index as HTML
+  [1m[35mGuest Load (0.3ms)[0m  SELECT "guests".* FROM "guests" ORDER BY ticketnumber
+Rendered guests/index.html.erb within layouts/application (78.9ms)
+Compiled guests.css  (10ms)  (pid 7212)
+Compiled application.css  (1ms)  (pid 7212)
+Completed 200 OK in 109ms (Views: 106.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2011-12-02 22:02:44 -0500
+Served asset /guests.css - 200 OK (3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-02 22:02:44 -0500
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-02 22:02:44 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-02 22:02:44 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-02 22:02:44 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2011-12-02 22:02:44 -0500
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-02 22:02:44 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/vortex.png" for 127.0.0.1 at 2011-12-02 22:02:44 -0500
+Served asset /vortex.png - 304 Not Modified (0ms)
+
+
+Started PUT "/guests/checkin" for 127.0.0.1 at 2011-12-02 22:02:46 -0500
+  Processing by GuestsController#checkin as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5vZ0Ae8AWn/h+0SaCqXcrw6qg5OvscK7baAW+Bh98Mk=", "ticket"=>"1", "commit"=>"Check-in"}
+  [1m[36mGuest Load (0.1ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."ticketnumber" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 1 AND "guests"."id" != 1) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mUPDATE "guests" SET "arrived" = 't', "updated_at" = '2011-12-03 03:02:46.099668' WHERE "guests"."id" = 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-02 22:02:46 -0500
+  Processing by GuestsController#index as HTML
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" ORDER BY ticketnumber
+Rendered guests/index.html.erb within layouts/application (81.4ms)
+Completed 200 OK in 91ms (Views: 88.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-02 22:02:46 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2011-12-02 22:02:46 -0500
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-02 22:02:46 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-02 22:02:46 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2011-12-02 22:02:46 -0500
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-02 22:02:46 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-02 22:02:46 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/vortex.png" for 127.0.0.1 at 2011-12-02 22:02:46 -0500
+Served asset /vortex.png - 304 Not Modified (0ms)
+
+
+Started GET "/guests/checkout/1" for 127.0.0.1 at 2011-12-02 22:02:59 -0500
+  Processing by GuestsController#checkout as HTML
+  Parameters: {"ticket"=>"1"}
+  [1m[36mGuest Load (0.2ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."ticketnumber" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."ticketnumber" = 1 AND "guests"."id" != 1) LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mUPDATE "guests" SET "arrived" = 'f', "updated_at" = '2011-12-03 03:02:59.437920' WHERE "guests"."id" = 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-02 22:02:59 -0500
+  Processing by GuestsController#index as HTML
+  [1m[35mGuest Load (0.3ms)[0m  SELECT "guests".* FROM "guests" ORDER BY ticketnumber
+Rendered guests/index.html.erb within layouts/application (78.8ms)
+Compiled guests.css  (9ms)  (pid 7212)
+Compiled application.css  (1ms)  (pid 7212)
+Completed 200 OK in 110ms (Views: 107.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-02 22:02:59 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2011-12-02 22:02:59 -0500
+Served asset /guests.css - 200 OK (5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-02 22:02:59 -0500
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-02 22:02:59 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-02 22:02:59 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2011-12-02 22:02:59 -0500
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-02 22:02:59 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/vortex.png" for 127.0.0.1 at 2011-12-02 22:02:59 -0500
+Served asset /vortex.png - 304 Not Modified (0ms)
