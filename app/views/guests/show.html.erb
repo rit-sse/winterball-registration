@@ -1,0 +1,32 @@
+<div class="mainpage">
+<div class="center">
+<h1 id="title">Guest Information</h1>
+</div>
+<div class="clear">&nbsp;</div>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @guest.name %>
+</p>
+
+<p>
+  <b>Ticket Number:</b>
+  <%= @guest.ticketnumber %>
+</p>
+
+<p>
+  <b>Arrived:</b>
+  <%= @guest.arrived %>
+</p>
+
+<p>
+  <b>Won Raffle:</b>
+  <%= @guest.wonprize %>
+</p>
+
+
+<%= link_to 'Edit', edit_guest_path(@guest) %> |
+<%= link_to 'Back', guests_path %>
+</div>

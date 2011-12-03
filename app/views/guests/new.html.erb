@@ -1,0 +1,15 @@
+<script type="text/javascript" lang="javascript">
+$(document).ready(function() {
+    $('#guest_name').select();
+});
+</script>
+<div class="mainpage">
+<div class="center">
+<h1 id="title">New guest</h1>
+</div>
+<div class="clear">&nbsp;</div>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', guests_path %>
+</div>

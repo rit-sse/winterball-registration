@@ -1,0 +1,73 @@
+<script type="text/javascript" lang="javascript">
+$(document).ready(function() {
+    $('#ticketNumber').select();
+    if($('#notification').text().indexOf('.') >= 0) {
+        $('#notification').delay(10000).slideUp(500);
+    } else {
+        $('#notification').hide();
+    }
+});
+</script>
+<div class="mainpage">
+<div class="center">
+<h1 id="title">Guest Check-in</h1>
+
+<div class="clear">&nbsp;</div>
+
+<h3>Ticket Number</h3>
+<div id="form-wrapper">
+<%= form_tag('/guests/checkin', :method => :put, :class => 'hidden-submit') do -%>
+  <div><%= text_field_tag 'ticket', nil, :size => 3, :maxlength => 3, :placeholder => '###', :class => 'huge-textbox input-center', :autocomplete => 'off', :id => 'ticketNumber' %></div>
+  <div><%= submit_tag 'Check-in' %></div>
+<% end -%>
+</div>
+
+<div id="notification-holder">
+<div id="notification">
+    <% if !@success.nil? then %>
+        <% if @success then %>
+            Successfully checked-<%= @dir %> <strong><%= @name %></strong> (<%= link_to 'Undo', '/guests/checkout/' + @ticket.to_s %>).
+        <% else %>
+            Could not check-<%= @dir %> ticket <strong><%= @ticket %></strong> (<%= link_to 'Undo', '/guests/checkin/' + @ticket.to_s %>).
+        <% end %>
+    <% else %>
+        &nbsp;
+    <% end %>
+</div>
+</div>
+<div><%= link_to 'New Guest', new_guest_path %> | <%= link_to 'Mass Add Guests', :action => "massform" %></div>
+<div>&nbsp;</div>
+<div><%= link_to 'Draw Raffle', :action => 'raffle' %></div>
+</div>
+<% if @guests.length > 0 then %>
+<div>&nbsp;</div>
+<center>
+<table id="ticket-holders">
+  <tr>
+    <th>Name</th>
+    <th>Ticket</th>
+    <th>Checked-in</th>
+    <th>Won Raffle</th>
+  </tr>
+
+<% @guests.each do |guest| %>
+  <tr>
+    <td><%= guest.name %></td>
+    <td><%= guest.ticketnumber %></td>
+    <td><%= guest.arrived %></td>
+    <td><%= guest.wonprize %>
+    <td><%= if !guest.arrived then (link_to 'In', '/guests/checkin/' + guest.ticketnumber.to_s) else "" end %></td>
+    <td><%= if guest.arrived then (link_to 'Out', '/guests/checkout/' + guest.ticketnumber.to_s) else "" end  %></td>
+    <td><%= link_to 'Show', guest %></td>
+    <td><%= link_to 'Edit', edit_guest_path(guest) %></td>
+    <!--<td><%= link_to 'Destroy', guest, confirm: 'Are you sure?', method: :delete %></td>-->
+  </tr>
+<% end %>
+</table>
+</center>
+<% else %>
+<div class="center">
+<p>There are no guests</p>
+</div>
+<% end %>
+</div>

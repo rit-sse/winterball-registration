@@ -1,0 +1,29 @@
+<div class="mainpage">
+<div class="center">
+<h1 id="title">Mass Guest Add</h1>
+
+<div class="clear">&nbsp;</div>
+
+<% if @failures.length > 0 then %>
+<h4>Failed Ticket Additions</h4>
+<center>
+<table id="failures" style="text-align: left;">
+    <% @failures.each_index do |i| %>
+    <% if i % 4 == 0 then %><tr><% end %>
+        <td><%= @failures.at(i) %></td>
+    <% if i % 4 == 3 then %></tr><% end %>
+    <% end %>
+</table>
+</center>
+<% end %>
+
+<h3>Guests (Name, Date, Ticket, Date Ticket)</h3>
+<div id="form-wrapper">
+<%= form_tag('/guests/mass/add', :method => :post) do -%>
+  <div><%= text_area_tag 'csv', nil, :size => "75x30", :id => 'csv' %></div>
+  <div><%= submit_tag 'Submit Guests' %></div>
+<% end -%>
+</div>
+</div>
+<%= link_to 'Back', guests_path %>
+</div>

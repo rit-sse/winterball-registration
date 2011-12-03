@@ -1,0 +1,60 @@
+// Place all the styles related to the guests controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    background-color: rgb(216, 216, 216);
+    background-image: url('/assets/vortex.png');
+    background-repeat: no-repeat;
+    background-position: -400px -150px;
+    background-attachment: fixed;
+}
+
+#title {
+    text-align: left;
+    margin-left: 75px;
+    margin-bottom: 35px;
+    color: rgb(216, 216, 216);
+}
+
+.center {
+    text-align: center;
+}
+
+.mainpage {
+    margin-left: 360px;
+    width: 555px;
+}
+
+.clear {
+    margin: 0px;
+    padding: 0px;
+    height: 0px;
+}
+
+form.hidden-submit input[type="submit"] {
+    display: none;
+}
+
+input[type="text"].huge-textbox {
+    font-size: 10em;
+}
+
+.input-center {
+    text-align: center;
+}
+
+#notification {
+    /*display: none;*/
+    margin: 5px;
+    padding: 10px;
+    background-color: #fdd;
+}
+
+#notification-holder {
+    min-height: 50px;
+}
+
+#ticket-holders {
+    border-spacing: 10px;
+}
