@@ -46,21 +46,25 @@ $(document).ready(function() {
   <tr>
     <th>Name</th>
     <th>Ticket</th>
-    <th>Checked-in</th>
+    <th>Checked</th>
     <th>Won Raffle</th>
   </tr>
 
 <% @guests.each do |guest| %>
   <tr>
-    <td><%= guest.name %></td>
+    <td><%= link_to guest.name, guest %></td>
     <td><%= guest.ticketnumber %></td>
-    <td><%= guest.arrived %></td>
+    <td><%= if !guest.arrived then
+                link_to 'Out', '/guests/checkin/' + guest.ticketnumber.to_s #yes this is backwards, shows not checked-in and you want to check in
+            else
+                link_to 'In', '/guests/checkout/' + guest.ticketnumber.to_s #yes this is backwards, shows checked-in and you want to check out
+            end %></td>
     <td><%= guest.wonprize %>
-    <td><%= if !guest.arrived then (link_to 'In', '/guests/checkin/' + guest.ticketnumber.to_s) else "" end %></td>
+    <!--<td><%= if !guest.arrived then (link_to 'In', '/guests/checkin/' + guest.ticketnumber.to_s) else "" end %></td>
     <td><%= if guest.arrived then (link_to 'Out', '/guests/checkout/' + guest.ticketnumber.to_s) else "" end  %></td>
     <td><%= link_to 'Show', guest %></td>
     <td><%= link_to 'Edit', edit_guest_path(guest) %></td>
-    <!--<td><%= link_to 'Destroy', guest, confirm: 'Are you sure?', method: :delete %></td>-->
+    <td><%= link_to 'Destroy', guest, confirm: 'Are you sure?', method: :delete %></td>-->
   </tr>
 <% end %>
 </table>
